@@ -9,15 +9,15 @@ describe('Testing function', () => {
         expect(pins.length).to.equal(1000)
     })
 
-    it('Should not be two equals numbers', () => {
-        pins.forEach(e => {
-            expect(methods.twoSameDigits(e)).to.equal(false)
+    it('Should not be two consecutive equal numbers', () => {
+        pins.forEach(pin => {
+            expect(methods.checkContigousEquality(pin)).to.equal(false)
         })
     })
 
-    it('Should not be three incremetal numbers', () => {
-        pins.forEach(e => {
-            expect(methods.threeIncrementalDigits(e)).to.equal(false)
+    it('Should not be three consecutive incremetal numbers', () => {
+        pins.forEach(pin => {
+            expect(methods.checkConsecutiveIncrements(pin)).to.equal(false)
         })
     })
 })
